@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+CPU Usage: <span id="example"></span> %
+@*<input type="button" id="hello-action" value="Hello" />*@
+
+@section scripts{
+<script src="@Url.Content("~/Scripts/jquery.signalR-1.0.0.js")"></script>
+<script src="~/signalr/hubs"></script>
+
+<script type="text/javascript">
+    $(function () {
+        // Declare a proxy to reference the hub. 
+        var machine = $.connection.machineHub;
+        machine.client.update = function (message) {
+            $('#example').text(message);
+        };
+
+        $.connection.hub.start().done(function () {
+            $('#hello-action').click(function () {
+                machine.server.update();
+            });
+        });
+    });
+</script>
+}

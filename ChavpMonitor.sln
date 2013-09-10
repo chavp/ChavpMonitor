@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chavp.Monitors", "Chavp.Monitors\Chavp.Monitors.csproj", "{1B803B7C-0F6A-4D26-86B7-6794DA973223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChavpMonitorMachine", "ChavpMonitorMachine\ChavpMonitorMachine.csproj", "{CD67B91A-65DE-4DA5-AD5A-CDE9C08FD37F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChavpMonitorWeb", "ChavpMonitorWeb\ChavpMonitorWeb.csproj", "{1A63A464-EA00-4E53-BFED-637A4949E9F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B803B7C-0F6A-4D26-86B7-6794DA973223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B803B7C-0F6A-4D26-86B7-6794DA973223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B803B7C-0F6A-4D26-86B7-6794DA973223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B803B7C-0F6A-4D26-86B7-6794DA973223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD67B91A-65DE-4DA5-AD5A-CDE9C08FD37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD67B91A-65DE-4DA5-AD5A-CDE9C08FD37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD67B91A-65DE-4DA5-AD5A-CDE9C08FD37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD67B91A-65DE-4DA5-AD5A-CDE9C08FD37F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A63A464-EA00-4E53-BFED-637A4949E9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A63A464-EA00-4E53-BFED-637A4949E9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A63A464-EA00-4E53-BFED-637A4949E9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A63A464-EA00-4E53-BFED-637A4949E9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
