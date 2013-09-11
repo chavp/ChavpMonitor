@@ -15,6 +15,7 @@ namespace ChavpMonitorMachine
     {
         public void Execute(IJobExecutionContext context)
         {
+
             var username = context.MergedJobDataMap["username"] as string;
             IExchange exchange = context.MergedJobDataMap["IExchange"] as IExchange;
             IAdvancedPublishChannel boxPublishChannel = context.MergedJobDataMap["IAdvancedPublishChannel"] as IAdvancedPublishChannel;
@@ -27,6 +28,7 @@ namespace ChavpMonitorMachine
             var message = new Message<MachineInfo>(machineInfo);
             message.Properties.UserId = username;
             boxPublishChannel.Publish<MachineInfo>(exchange, "info", message);
+
         }
     }
 }

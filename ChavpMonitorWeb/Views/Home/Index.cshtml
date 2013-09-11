@@ -1,27 +1,92 @@
 ﻿@{
+    // http://www.flotcharts.org/
+    
     ViewBag.Title = "Index";
 }
 
-CPU Usage: <span id="example"></span> %
+<div>
+    <strong>Machoine Time: </strong><span id="machine-time"></span>
+    <strong>Machoine Name: </strong><span id="machine-name"></span>
+    <strong>CPU Usage: </strong><span id="cpu-usage"></span> %
+</div>
+<div id="content">
+    <div class="info-container">
+        <div id="placeholder" class="info-placeholder"></div>
+    </div>
+</div>
+
 @*<input type="button" id="hello-action" value="Hello" />*@
 
 @section scripts{
-<script src="@Url.Content("~/Scripts/jquery.signalR-1.0.0.js")"></script>
-<script src="~/signalr/hubs"></script>
-
+<script src="@Url.Content("~/Scripts/jquery.signalR-1.0.0.js")" type="text/javascript"></script>
+<script src="~/signalr/hubs" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/flot/jquery.flot.js")" type="text/javascript"></script>
+    
 <script type="text/javascript">
     $(function () {
+        var cpuUsages = [], totalPoints = 300, updateInterval = 1000, data = [];
+       
+        function getData() {
+            if (data.length > 0)
+                data = data.slice(1);
+
+            while (data.length < totalPoints) {
+
+                var current = cpuUsages.length > 0 ? cpuUsages[cpuUsages.length - 1] : 0;
+
+                data.push(current);
+            }
+
+            // Zip the generated y values with the x values
+            var res = [];
+            for (var i = 0; i < data.length; ++i) {
+                res.push([i, data[i]])
+            }
+
+            return res;
+        }
+
+        function update() {
+
+            plot.setData([getData()]);
+
+            // Since the axes don't change, we don't need to call plot.setupGrid()
+            plot.draw();
+            setTimeout(update, updateInterval);
+        }
+
+        var plot = $.plot("#placeholder", [getData()], {
+            series: {
+                shadowSize: 0	// Drawing is faster without shadows
+            },
+            yaxis: {
+                min: 0,
+                max: 100
+            },
+            xaxis: {
+                show: false
+            }
+        });
+
+        var index = 0;
         // Declare a proxy to reference the hub. 
         var machine = $.connection.machineHub;
-        machine.client.update = function (message) {
-            $('#example').text(message);
+
+        machine.client.update = function (info) {
+            $('#machine-time').text(info.MachineTime);
+            $('#machine-name').text(info.MachineName);
+            $('#cpu-usage').text(info.CpuUsage);
+            cpuUsages.push(info.CpuUsage);
         };
 
         $.connection.hub.start().done(function () {
-            $('#hello-action').click(function () {
-                machine.server.update();
-            });
+            //$('#hello-action').click(function () {
+            //    machine.server.update();
+            //});
         });
+
+        update();
+
     });
 </script>
 }

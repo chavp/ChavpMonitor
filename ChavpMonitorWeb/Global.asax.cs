@@ -58,7 +58,7 @@ namespace ChavpMonitorWeb
             {
                 var machine = body.Body;
 
-                _hubContext.Clients.All.update(machine.CpuUsage);
+                _hubContext.Clients.All.update(machine);
             }));
         }
 

@@ -50,8 +50,8 @@ namespace ChavpMonitorMachine
                 ITrigger trigger = TriggerBuilder.Create()
                     .WithIdentity("trigger1", "group1")
                     .StartNow()
-                    .WithSimpleSchedule(x =>
-                        x.WithInterval(TimeSpan.FromSeconds(1)).RepeatForever())
+                    .WithSimpleSchedule(
+                    x => x.WithInterval(TimeSpan.FromMilliseconds(1000)).RepeatForever())
                     .Build();
 
                 // Tell quartz to schedule the job using our trigger

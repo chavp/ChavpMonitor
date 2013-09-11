@@ -1,0 +1,7 @@
+D:\projects\Git\ChavpMonitor\ChavpMonitorMachine\bin\Debug\ChavpMonitorMachine.exe
+D:\projects\Git\ChavpMonitor\ChavpMonitorMachine\bin\Debug\Chavp.Monitors.dll
+D:\projects\Git\ChavpMonitor\ChavpMonitorMachine\bin\Debug\Common.Logging.dll
+D:\projects\Git\ChavpMonitor\ChavpMonitorMachine\bin\Debug\EasyNetQ.dll
+D:\projects\Git\ChavpMonitor\ChavpMonitorMachine\bin\Debug\Newtonsoft.Json.dll
+D:\projects\Git\ChavpMonitor\ChavpMonitorMachine\bin\Debug\Quartz.dll
+D:\projects\Git\ChavpMonitor\ChavpMonitorMachine\bin\Debug\RabbitMQ.Client.dll
