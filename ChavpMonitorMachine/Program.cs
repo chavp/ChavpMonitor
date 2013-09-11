@@ -16,7 +16,7 @@ namespace ChavpMonitorMachine
         static void Main(string[] args)
         {
             string rabbitMQBrokerHost = "localhost";
-            string virtualHost = "machines";
+            string virtualHost = "machine";
             string username = "machine-1";
             string password = "123456789";
 

@@ -19,7 +19,7 @@ namespace ChavpMonitorWeb
     public class MvcApplication : System.Web.HttpApplication
     {
         string rabbitMQBrokerHost = "localhost";
-        string virtualHost = "machines";
+        string virtualHost = "machine";
         string username = "guest";
         string password = "guest";
 
