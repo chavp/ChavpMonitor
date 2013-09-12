@@ -24,11 +24,14 @@
     
 <script type="text/javascript">
     $(function () {
-        var cpuUsages = [], totalPoints = 300, updateInterval = 1000, data = [];
+        var cpuUsages = [], totalPoints = 100, updateInterval = 1000, data = [];
        
         function getData() {
             if (data.length > 0)
                 data = data.slice(1);
+
+            if (cpuUsages.length > totalPoints)
+                cpuUsages = cpuUsages.slice(1);
 
             while (data.length < totalPoints) {
 
